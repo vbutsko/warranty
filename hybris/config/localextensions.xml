@@ -53,5 +53,6 @@
     <extension name='warrantyfacades' />
     <extension name='warrantyinitialdata' />
     <extension name='warrantystorefront' />
+    <extension name='warrantysaddon' />
   </extensions>
 </hybrisconfig>

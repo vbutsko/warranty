@@ -1,6 +1,7 @@
 *.class
 *.project
 *.classpath
+*.iml
 /hybris/bin/ext-commerce/*
 /hybris/bin/ext-content/*
 /hybris/bin/ext-addon/*
