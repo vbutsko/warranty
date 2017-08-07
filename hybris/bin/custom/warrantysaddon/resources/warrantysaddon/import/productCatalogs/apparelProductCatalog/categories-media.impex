@@ -13,5 +13,5 @@ $productCatalogName=Apparel Product Catalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $thumbnail=thumbnail(code, $catalogVersion)
 $picture=picture(code, $catalogVersion)
-$siteResource=jar:by.warranty.constants.WarrantysaddonConstants&/warrantysaddon/import/productCatalogs/$productCatalog
+$siteResource=jar:by.warranty.addon.constants.WarrantysaddonConstants&/warrantysaddon/import/productCatalogs/$productCatalog
 

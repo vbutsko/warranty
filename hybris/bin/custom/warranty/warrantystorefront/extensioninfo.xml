@@ -11,7 +11,8 @@
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
 	<extension abstractclassprefix="Generated" classprefix="WarrantyStorefront" name="warrantystorefront" usemaven="false">		
-        <requires-extension name="warrantysaddon"/>
+        
+<requires-extension name="warrantysaddon"/>
 <requires-extension name="assistedservicestorefront"/>
 <requires-extension name="adaptivesearchsamplesaddon"/>
 <requires-extension name="orderselfserviceaddon"/>

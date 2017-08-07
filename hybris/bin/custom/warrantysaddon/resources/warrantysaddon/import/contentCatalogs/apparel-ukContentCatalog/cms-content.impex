@@ -10,4 +10,4 @@
 # -----------------------------------------------------------------------
 $contentCatalog=apparel-ukContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$jarResourceCms=jar:by.warranty.constants.WarrantysaddonConstants&/warrantysaddon/import/cockpit/cmscockpit
+$jarResourceCms=jar:by.warranty.addon.constants.WarrantysaddonConstants&/warrantysaddon/import/cockpit/cmscockpit

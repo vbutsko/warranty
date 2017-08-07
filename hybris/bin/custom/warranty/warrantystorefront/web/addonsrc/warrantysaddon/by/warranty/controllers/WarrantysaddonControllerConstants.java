@@ -8,17 +8,11 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package by.warranty.constants;
+package by.warranty.controllers;
 
 /**
- * Global class for all Warrantysaddon web constants. You can add global constants for your extension into this class.
  */
-public final class WarrantysaddonWebConstants // NOSONAR
+public interface WarrantysaddonControllerConstants
 {
-	private WarrantysaddonWebConstants()
-	{
-		//empty to avoid instantiating this constant class
-	}
-
-	// implement here constants used by this extension
+	// implement here controller constants used by this extension
 }

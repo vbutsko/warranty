@@ -16,4 +16,4 @@
 #######
 
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$jarResourceCmsCockpit=jar:by.warranty.constants.WarrantysaddonConstants&/warrantysaddon/import/cockpit/cmscockpit
+$jarResourceCmsCockpit=jar:by.warranty.addon.constants.WarrantysaddonConstants&/warrantysaddon/import/cockpit/cmscockpit

@@ -19,4 +19,4 @@ $others=others(code, $catalogVersion)
 $data_sheet=data_sheet(code, $catalogVersion)
 $medias=medias(code, $catalogVersion)
 $galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:by.warranty.constants.WarrantysaddonConstants&/warrantysaddon/import/productCatalogs/$productCatalog
+$siteResource=jar:by.warranty.addon.constants.WarrantysaddonConstants&/warrantysaddon/import/productCatalogs/$productCatalog

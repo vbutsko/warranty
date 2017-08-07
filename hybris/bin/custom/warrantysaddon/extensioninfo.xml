@@ -15,7 +15,7 @@
 		<!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
 		<requires-extension name="addonsupport"/>
 
-		<coremodule generated="true" manager="by.warranty.jalo.WarrantysaddonManager" packageroot="by.warranty"/>
+		<coremodule generated="true" manager="by.warranty.addon.jalo.WarrantysaddonManager" packageroot="by.warranty.addon"/>
 
 		
 		<meta key="classpathgen" value="false"/>
