@@ -16,6 +16,10 @@
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
+	<collectiontypes>
+		<collectiontype code="WarrantyList" elementtype="Warranty" autocreate="true" generate="true" type="list"/>
+	</collectiontypes>
+
 	<enumtypes>
 		<enumtype code="WarrantyType" autocreate="true" generate="true">
 			<value code="Standard" />
@@ -77,6 +81,22 @@
 				<attribute qualifier="warrantyType" type="WarrantyType" >
 					<persistence type="property" />
 					<defaultvalue>em().getEnumerationValue("WarrantyType", "Standard")</defaultvalue>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="Product" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="warranties" type="WarrantyList">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="Catalog" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="warranties" type="WarrantyList">
+					<persistence type="property" />
 				</attribute>
 			</attributes>
 		</itemtype>
