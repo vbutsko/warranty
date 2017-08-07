@@ -23,6 +23,7 @@
 /hybris/bin/ext-smartedit/*
 /hybris/bin/ext-print/*
 /hybris/bin/ext-eventtracking/*
+/**/jalo/*
 /**/gensrc/*
 /**/lib/*
 /**/classes/*

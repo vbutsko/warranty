@@ -16,6 +16,13 @@
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
+	<enumtypes>
+		<enumtype code="WarrantyType" autocreate="true" generate="true">
+			<value code="Standard" />
+			<value code="Extended" />
+		</enumtype>
+	</enumtypes>
+
 	<itemtypes>
 <!--
 		<itemtype generate="true"
@@ -43,5 +50,35 @@
 			</attributes>
 		</itemtype>
 -->
+
+		<itemtype code="Warranty" generate="true" autocreate="true" jaloclass="by.warranty.addon.jalo.Warranty">
+			<deployment table="Warranty" typecode="25000" />
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<modifiers unique="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="name" type="localized:java.lang.String">
+                    <persistence type="property"/>
+				</attribute>
+                <attribute qualifier="length" type="java.lang.Integer">
+                    <description>Length in months</description>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="description" type="localized:java.lang.String">
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="warrantyText" type="java.lang.String">
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="warrantyTextPDF" type="MediaContainer">
+                    <persistence type="property" />
+                </attribute>
+				<attribute qualifier="warrantyType" type="WarrantyType" >
+					<persistence type="property" />
+					<defaultvalue>em().getEnumerationValue("WarrantyType", "Standard")</defaultvalue>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 </items>
