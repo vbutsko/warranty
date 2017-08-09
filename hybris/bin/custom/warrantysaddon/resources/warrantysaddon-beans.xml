@@ -24,5 +24,23 @@
 		<property name="flag" type="boolean"/>
 	</bean>
 	-->
+	<bean class="by.warranty.addon.facades.product.data.WarrantyData">
+		<property name="code" type="java.lang.String" />
+		<property name="name" type="java.lang.String" />
+		<property name="length" type="java.lang.Integer" />
+		<property name="description" type="java.lang.String" />
+		<property name="warrantyText" type="java.lang.String" />
+		<property name="warrantyTextPDF" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ImageData>" />
+        <property name="warrantyType" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.catalog.data.CatalogData">
+		<property name="warranties" type="java.util.List&lt;by.warranty.addon.facades.product.data.WarrantyData>" />
+	</bean>
+
+    <bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+        <property name="warranties" type="java.util.List&lt;by.warranty.addon.facades.product.data.WarrantyData>" />
+    </bean>
+
 
 </beans>

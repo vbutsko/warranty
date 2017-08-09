@@ -44,4 +44,30 @@
 		<property name="extensionName" value="warrantysaddon" />
 	</bean>
 
+	<bean id="warrantyPopulator" class="by.warranty.addon.facades.populator.WarrantyPopulator">
+		<property name="mediaContainerConverter" ref="responsiveMediaContainerConverter"/>
+	</bean>
+
+	<bean id="warrantyConverter" parent="abstractPopulatingConverter">
+        <property name="targetClass" value="java.util.ArrayList"/>
+        <property name="populators">
+            <list merge="true">
+                <ref bean="warrantyPopulator" />
+            </list>
+        </property>
+	</bean>
+
+	<alias name="warrantyProductPopulator" alias="productPopulator"/>
+	<bean id="warrantyProductPopulator"
+		  class="by.warranty.addon.facades.product.converters.populator.WarrantyProductPopulator"
+		  parent="defaultProductPopulator">
+		<property name="warrantyConverter" ref="warrantyConverter"/>
+	</bean>
+
+	<alias name="warrantyCatalogHierarchyPopulator" alias="catalogHierarchyPopulator"/>
+	<bean id="warrantyCatalogHierarchyPopulator"
+		  class="by.warranty.addon.facades.catalogs.converters.populator.WarrantyCatalogHierarchyPopulator"
+		  parent="defaultCatalogHierarchyPopulator">
+		<property name="warrantyConverter" ref="warrantyConverter"/>
+	</bean>
 </beans>
