@@ -12,6 +12,8 @@
 <config xmlns="http://www.hybris.com/cockpit/config"
         xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
         xmlns:list="http://www.hybris.com/cockpitng/component/listView"
+        xmlns:yss="http://www.hybris.com/cockpitng/config/simplesearch"
+        xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch"
         xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
         xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config">
 
@@ -79,6 +81,27 @@
                 </wz:navigation>
             </wz:step>
         </wz:flow>
+    </context>
+
+    <context type="Warranty" component="simple-search">
+        <yss:simple-search >
+            <yss:field name="pk"/>
+            <yss:sort-field name="code" asc="true"/>
+        </yss:simple-search>
+    </context>
+
+
+    <context type="Warranty" component="advanced-search">
+        <as:advanced-search connection-operator="AND">
+            <as:field-list>
+                <as:field name="code" operator="contains" selected="true"/>
+                <as:field name="name" operator="contains" selected="true"/>
+                <as:field name="length" operator="equals" selected="true"/>
+                <as:field name="description" operator="contains" selected="true"/>
+                <as:field name="pk" operator="equal" selected="false" sortable="false"/>
+            </as:field-list>
+            <as:sort-field name="code" asc="false" />
+        </as:advanced-search>
     </context>
 
     <context merge-by="module" type="Product" component="editor-area">
