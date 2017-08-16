@@ -22,8 +22,8 @@
 
 	<enumtypes>
 		<enumtype code="WarrantyType" autocreate="true" generate="true">
-			<value code="Standard" />
-			<value code="Extended" />
+			<value code="STANDARD" />
+			<value code="EXTENDED" />
 		</enumtype>
 	</enumtypes>
 
@@ -80,7 +80,7 @@
                 </attribute>
 				<attribute qualifier="warrantyType" type="WarrantyType" >
 					<persistence type="property" />
-					<defaultvalue>em().getEnumerationValue("WarrantyType", "Standard")</defaultvalue>
+					<defaultvalue>em().getEnumerationValue("WarrantyType", "STANDARD")</defaultvalue>
 				</attribute>
 			</attributes>
 		</itemtype>
