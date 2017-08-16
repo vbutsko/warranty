@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+        xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+        xmlns:list="http://www.hybris.com/cockpitng/component/listView"
+        xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+        xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config">
+
+    <context merge-by="module" parent="auto" component="explorer-tree">
+        <explorer-tree:explorer-tree >
+            <explorer-tree:navigation-node id="hmc_treenode_catalog">
+                <explorer-tree:type-node id="Warranty" code="Warranty" />
+            </explorer-tree:navigation-node>
+        </explorer-tree:explorer-tree>
+    </context>
+
+    <context type="Warranty" component="listview">
+        <list:list-view>
+            <list:column qualifier="code"/>
+            <list:column qualifier="warrantyType"/>
+            <list:column qualifier="name"/>
+        </list:list-view>
+    </context>
+
+    <context component="editor-area" type="Warranty">
+        <editorArea:editorArea >
+            <editorArea:tab name="essentials">
+                <editorArea:section name="essentials">
+                    <editorArea:attribute qualifier="code"/>
+                    <editorArea:attribute qualifier="warrantyType"/>
+                </editorArea:section>
+                <editorArea:section name="data">
+                    <editorArea:attribute qualifier="name"/>
+                    <editorArea:attribute qualifier="length"/>
+                </editorArea:section>
+                <editorArea:section name="data">
+                    <editorArea:attribute qualifier="description"/>
+                    <editorArea:attribute qualifier="warrantyText"/>
+                </editorArea:section>
+                <editorArea:section name="MediaContainer">
+                    <editorArea:attribute qualifier="warrantyTextPDF"/>
+                </editorArea:section>
+            </editorArea:tab>
+            <editorArea:tab name="dates">
+                <editorArea:section name="dates">
+                    <editorArea:attribute qualifier="creationtime"/>
+                    <editorArea:attribute qualifier="modifiedtime"/>
+                </editorArea:section>
+            </editorArea:tab>
+        </editorArea:editorArea>
+    </context>
+
+    <context component="create-wizard" type="Warranty">
+        <wz:flow id="WarrantyWizard" title="create.warranty.title">
+            <wz:prepare id="warrantyPrepare">
+                <wz:initialize property="newWarranty" type="Warranty"/>
+            </wz:prepare>
+            <wz:step id="step1" label="create.warranty.general.label" sublabel="create.warranty.general.sublabel">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newWarranty">
+                        <wz:property qualifier="code"/>
+                        <wz:property qualifier="warrantyType"/>
+                    </wz:property-list>
+                </wz:content>
+                <wz:navigation id="step1.navigation">
+                    <wz:cancel/>
+                    <wz:done visible="!#empty(newWarranty.code)">
+                        <wz:save property="newWarranty"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+        </wz:flow>
+    </context>
+</config>
