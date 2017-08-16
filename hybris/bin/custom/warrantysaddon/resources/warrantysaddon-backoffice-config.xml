@@ -35,25 +35,21 @@
 
     <context component="editor-area" type="Warranty">
         <editorArea:editorArea >
-            <editorArea:tab name="essentials">
-                <editorArea:section name="essentials">
+            <editorArea:tab name="hmc.essential">
+                <editorArea:section name="hmc.essential">
                     <editorArea:attribute qualifier="code"/>
                     <editorArea:attribute qualifier="warrantyType"/>
                 </editorArea:section>
-                <editorArea:section name="data">
+                <editorArea:section name="hmc.properties">
                     <editorArea:attribute qualifier="name"/>
                     <editorArea:attribute qualifier="length"/>
-                </editorArea:section>
-                <editorArea:section name="data">
                     <editorArea:attribute qualifier="description"/>
                     <editorArea:attribute qualifier="warrantyText"/>
-                </editorArea:section>
-                <editorArea:section name="MediaContainer">
                     <editorArea:attribute qualifier="warrantyTextPDF"/>
                 </editorArea:section>
             </editorArea:tab>
-            <editorArea:tab name="dates">
-                <editorArea:section name="dates">
+            <editorArea:tab name="hmc.administration" >
+                <editorArea:section name="hmc.section.metadata">
                     <editorArea:attribute qualifier="creationtime"/>
                     <editorArea:attribute qualifier="modifiedtime"/>
                 </editorArea:section>
@@ -105,7 +101,7 @@
     </context>
 
     <context merge-by="module" type="Product" component="editor-area">
-        <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+        <editorArea:editorArea >
             <editorArea:tab name="hmc.tab.product.warranties">
                 <editorArea:section name="hmc.product.warranties">
                     <editorArea:attribute qualifier="warranties"/>
