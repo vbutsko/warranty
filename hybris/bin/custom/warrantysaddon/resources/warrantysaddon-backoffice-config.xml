@@ -90,4 +90,36 @@
             </editorArea:tab>
         </editorArea:editorArea>
     </context>
+
+    <context merge-by="module" type="Product" component="create-wizard">
+        <wz:flow id="ProductWizard" title="create.title(ctx.TYPE_CODE)">
+            <wz:step id="step3" label="create.product.categories.label" sublabel="create.product.categories.sublabel">
+                <wz:info label="create.product.categories.info.label" position="top"/>
+                <wz:content id="step3.content">
+                    <wz:property qualifier="newProduct.supercategories"/>
+                </wz:content>
+                <wz:navigation id="step3.navigation">
+                    <wz:cancel/>
+                    <wz:back/>
+                    <wz:next/>
+                    <wz:done>
+                        <wz:save property="newProduct"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+            <wz:step id="step4" label="create.product.warranties.label" sublabel="create.product.warranties.sublabel">
+                <wz:info label="create.product.warranties.warranties.label" position="top"/>
+                <wz:content id="step3.content">
+                    <wz:property qualifier="newProduct.warranties"/>
+                </wz:content>
+                <wz:navigation id="step3.navigation">
+                    <wz:cancel/>
+                    <wz:back/>
+                    <wz:done>
+                        <wz:save property="newProduct"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+        </wz:flow>
+    </context>
 </config>
