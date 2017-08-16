@@ -80,4 +80,14 @@
             </wz:step>
         </wz:flow>
     </context>
+
+    <context merge-by="module" type="Product" component="editor-area">
+        <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+            <editorArea:tab name="hmc.tab.product.warranties">
+                <editorArea:section name="hmc.product.warranties">
+                    <editorArea:attribute qualifier="warranties"/>
+                </editorArea:section>
+            </editorArea:tab>
+        </editorArea:editorArea>
+    </context>
 </config>
