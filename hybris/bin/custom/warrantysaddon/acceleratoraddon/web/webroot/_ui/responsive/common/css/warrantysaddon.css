@@ -1,0 +1,7 @@
+.hide_desc {
+    display: none;
+}
+
+.war_det:hover .hide_desc {
+    display : block;
+}
