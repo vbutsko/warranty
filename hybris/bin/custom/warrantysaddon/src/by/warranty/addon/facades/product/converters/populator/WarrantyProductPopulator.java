@@ -30,6 +30,13 @@ public class WarrantyProductPopulator extends ProductPopulator
                 warrantyDataList.add(warrantyConverter.convert(warranty));
             }
         }
+        else if (CollectionUtils.isNotEmpty(source.getCatalogVersion().getCatalog().getWarranties()))
+        {
+            for(final WarrantyModel warranty: source.getCatalogVersion().getCatalog().getWarranties())
+            {
+                warrantyDataList.add(warrantyConverter.convert(warranty));
+            }
+        }
         target.setWarranties(warrantyDataList);
     }
 
