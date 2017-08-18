@@ -20,3 +20,14 @@ $solrIndexedType=electronicsProductType
 $indexBaseSite=electronics
 $indexLanguages=ja,en,de,zh
 $indexCurrencies=JPY,USD
+
+INSERT_UPDATE SolrValueRange;&rangeValueRefID;solrValueRangeSet(name)[unique=true];name[unique=true];from;to
+;warrantyRef1;warrantyRange; < 6;0;5
+;warrantyRef2;warrantyRange; 6-12;6;12
+;warrantyRef3;warrantyRange; > 12;13;9999999
+
+INSERT_UPDATE SolrValueRangeSet;name[unique=true];qualifier;type;solrValueRanges(&rangeValueRefID);
+;warrantyRange;;integer;warrantyRef1,warrantyRef2,warrantyRef3;;
+
+INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);sortableType(code);currency[default=false];localized[default=false];multiValue[default=false];facet[default=true];facetType(code);facetSort(code);priority;visible;useForSpellchecking[default=false];useForAutocomplete[default=false];fieldValueProvider;facetDisplayNameProvider;customFacetSortProvider;topValuesProvider;rangeSets(name)
+;$solrIndexedType; reviewWarrantyRange ;integer ;;     ;     ;true ;true ;MultiSelectOr ;Alpha ;2000 ;true;  ;  ;rangedWarratyProvider;;;;warrantyRange
