@@ -49,7 +49,7 @@
 	</bean>
 
 	<bean id="warrantyConverter" parent="abstractPopulatingConverter">
-        <property name="targetClass" value="java.util.ArrayList"/>
+        <property name="targetClass" value="by.warranty.addon.facades.product.data.WarrantyData"/>
         <property name="populators">
             <list merge="true">
                 <ref bean="warrantyPopulator" />
